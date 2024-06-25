@@ -1205,7 +1205,7 @@ Values:
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, -180%) scale(1.5);
+    transform: translate(-50%, -580%) scale(1.5);
     opacity: 0;
   }
 `,BoxClickCoin=styled.div`
