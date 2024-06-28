@@ -13,7 +13,7 @@ import {
 } from "./styled/styled";
 import { useEffect, useState } from "react";
 import LogoCoin from '../../public/logo-coin.png';
-import useTelegramInitData from "../hooks/useTelegramInitData";
+import { useTelegramInitData } from "../hooks/useTelegramInitData";
 
 export function Counter() {
   const { connected } = useTonConnect();
@@ -61,8 +61,7 @@ export function Counter() {
     <div className="Container">
       <TonConnectButton />
 
-      <Title>Click to collect gems!</Title>
-      <Title>initData: {initData ?? 'null'}</Title>
+      <Title>Click to collect gems! {JSON.stringify(initData)}</Title>
       <Card>
         <FlexBoxRow style={{ justifyContent: 'center' }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 14 12" fill="none">
