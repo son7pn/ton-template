@@ -13,10 +13,12 @@ import {
 } from "./styled/styled";
 import { useEffect, useState } from "react";
 import LogoCoin from '../../public/logo-coin.png';
+import useTelegramInitData from "../hooks/useTelegramInitData";
 
 export function Counter() {
   const { connected } = useTonConnect();
   const { value, address, sendIncrement } = useCounterContract();
+  const initData: any = useTelegramInitData();
 
   const formatPrice = (value: number) => {
     return value ? value.toLocaleString("en-US") : "0";
@@ -60,6 +62,7 @@ export function Counter() {
       <TonConnectButton />
 
       <Title>Click to collect gems!</Title>
+      <Title>initData: {initData ?? 'null'}</Title>
       <Card>
         <FlexBoxRow style={{ justifyContent: 'center' }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 14 12" fill="none">
