@@ -11,6 +11,9 @@ export function useTelegramInitData() {
   const [data, setData] = useState<TelegramWebApps.WebAppInitData>({});
  
   useEffect(() => {
+
+    console.log('WebApp.initData: ', WebApp.initData);
+    
     const firstLayerInitData = Object.fromEntries(
       new URLSearchParams(WebApp.initData)
     );
